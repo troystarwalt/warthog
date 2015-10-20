@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Warthog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1>This is cool</h1>
+<hr />
+
+<%= yield %>
+
+<hr>
+
+<a href="/profile">profile</a>
+<a href="/signup">signup</a>
+<a href="/login">login</a>
+<a href="/logout">logout</a>
+<footer>&copy; 1996</footer>
+</body>
+</html>
