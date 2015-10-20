@@ -4,7 +4,7 @@ Try running this project by calling `rails server` from the shell.
 
 # Running the database
 
-This runs sqlite3 (`sqlite3` gem) in development and Postgres (`pg` gem) in production.
+This runs sqlite3 (`sqlite3` gem) in development and Postgres (`pg` gem) in production using [groups](http://bundler.io/groups.html) in bundler.
 
 # Running Tests
 
