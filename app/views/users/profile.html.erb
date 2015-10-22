@@ -1,6 +1,14 @@
 
 <% if @user %>
 	<p> You are logged in! Hi <%= @user.fname %> </p>
+	<p> You created your account <%= distance_of_time_in_words(Time.now, @user.created_at) %> ago </p>
 <% else %>
 	<p> Sorry, I don't know who you are. Please login. </p>
+<% end %>
+
+<% if !session[:user_id] %>
+	<p>You're not allowed to post yet.</p>
+<% else %>
+	<p>Make a post</p>
+	<textarea>
 <% end %>

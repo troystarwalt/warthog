@@ -1,4 +1,5 @@
 <p>Did you know that <%=@user.fname %> <%= @user.lname %> is wanted in <%= rand(20) %> different states?</p>
+<p> This account was created <%= distance_of_time_in_words(Time.now, @user.created_at) %> ago </p>
 
 <p>Fun fact: <%= @user.fact %></p>
 

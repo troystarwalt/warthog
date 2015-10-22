@@ -1,0 +1,6 @@
+<%= select_date(Time.now + 10.days) %>
+
+<div>
+	<p>What's your birthday?</p>
+	<%= date_select("user", "birthday", order: [:month, :day]) %>
+</div>

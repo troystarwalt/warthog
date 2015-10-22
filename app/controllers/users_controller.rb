@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	result = User.create(params[:user])
+  	result = User.create(user_params)
   	if result
   		redirect_to user_path result
   	else
@@ -87,5 +87,14 @@ class UsersController < ApplicationController
     @query = params[:fname]
     # TODO need to use ILIKE in Postgres, where strings are case sensitive
     @users = User.where("fname LIKE ?", "%#{params[:fname]}%")
+  end
+
+  def view_helpers
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:fname, :lname, :email, :password, :fact)
   end
 end

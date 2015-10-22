@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get 'users/index'
   get 'users/fact'
   get 'users/profile'
+  get 'users/view_helpers'
 
   get '/search', to: 'users#search'
   get '/searchresults', to: 'users#searchresults'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   post '/loginverify', to: 'users#loginverify'
 
   resources :users
+  resources :posts
 
   # using `resources` is the same as defining these attributes manually:
 
