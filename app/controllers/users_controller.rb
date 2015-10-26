@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def loginverify
     # > User(fname: string, password: string, ...)
     result = User.all.where(
-      fname: params[:username],
+      fname: params[:fname],
       password: params[:password]
     ).first
 
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to "/profile"
 
     else
-      redirect_to "/login?error=BADUSERNAMEORPASSWORD"
+      redirect_to "/login?error=BADFNAMEORPASSWORD"
     end
   end
 
@@ -95,6 +95,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:fname, :lname, :email, :password, :fact)
+    params.require(:user).permit(:fname, :lname, :email, :password, :fact, :password_confirmation)
   end
 end
